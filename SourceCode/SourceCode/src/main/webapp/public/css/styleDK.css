@@ -1,0 +1,253 @@
+/*--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+img{max-width:100%;}
+/*end reset*/
+html, body{
+    font-size: 100%;
+	font-family: 'Montserrat', sans-serif;
+	background:url(../images/2.jpeg) no-repeat 0px 0px;
+	background-size:cover;
+	background-attachment:fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+}
+body {
+		padding-bottom:30px;
+}
+h1,h2,h3,h4,h5,h6,input,p,a,select,button,textarea{
+	font-family: 'Montserrat', sans-serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover,body a{
+	text-decoration:none;
+}
+
+.login {
+	width: 400px;
+	margin: 16px auto;
+	font-size: 16px;
+}
+
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.login-header {
+  background: #33b5e5;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.w3l_grid {
+  background: #fff;
+  padding:25px;
+}
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  margin: 15px 0px;
+  color:#0a0a0a;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 13px;
+  outline:none;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+.login-container input[type="text"] {
+	color:#070707;
+}
+
+.login-container input[type="text"]:hover {
+    border-color: #28d;
+}
+
+/* Text fields' focus effect */
+
+.login input[type="submit"] {
+  background:#33b5e5 ;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background:#28d;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+.login-container>div input{
+    box-sizing: border-box;
+    margin:0 15 0 15;
+} 
+.login-container input {
+    width: 100%;
+    display: flex;
+    background-color:#ef4d4d;
+    color: white;
+    padding: 12px 20px;
+   
+    border: none;
+	font-size:14px;
+	letter-spacing:1px;
+    cursor: pointer;
+	outline:none;
+	transition: .5s ease-in;
+    -webkit-transition: .5s ease-in;
+    -ms-transition: .5s ease-in;
+    -o-transition: .5s ease-in;
+    -moz-transition:.5s ease-in;
+}
+
+input:hover{
+    background-color:rgba(51, 181, 229, 0.62);
+}
+/* responsive design */
+@media only screen and (max-width:1080px) {
+.login input[type="text"], .login input[type="password"] {
+
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.login input[type="text"], .login input[type="password"] {
+    margin: 20px 0px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9em;
+}
+}
+@media only screen and (max-width:991px) {
+	.login-title {
+    padding:28px 0;
+	}
+	.login-title h1 {
+    font-size:34px;
+    letter-spacing: 4px;
+}
+.login {
+    width: 340px;
+    margin: 9px auto;
+    font-size: 11px;
+}
+.login-header {
+   
+    padding: 12px;
+    font-size: 1.2em;
+}
+.w3l_grid {
+    padding:19px;
+}
+.login input[type="text"], .login input[type="password"] {
+
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.login input[type="text"], .login input[type="password"] {
+    margin: 20px 0px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9em;
+}
+}
+@media only screen and (max-width:800px) {
+.login-header {
+    padding:8px;
+}
+.login {
+    width: 360px;
+    margin: 11px auto;
+    font-size: 13px;
+}
+.w3l_grid {
+    padding: 15px;
+}
+.login input[type="text"], .login input[type="password"] {
+  margin: 14px 0px;
+    padding: 9px;
+    font-size: 0.9em;
+}
+.login-container input[type="submit"] {
+      padding: 9px 0px;
+   font-size: 13px;
+}
+}
+@media only screen and (max-width:414px) {
+.login-title h1 {
+    font-size: 25px;
+}
+.login {
+    width: 290px;
+    margin: 8px auto;
+    font-size: 12px;
+}
+.w3l_grid {
+    padding: 13px;
+}
+}
+@media only screen and (max-width:375px) {
+.login-header {
+    padding: 5px;
+}
+.login input[type="text"], .login input[type="password"] {
+    margin: 12px 0px;
+    padding: 7px;
+    font-size: 0.9em;
+}
+.login-container input[type="submit"] {
+    padding: 7px 0px;
+    font-size: 12px;
+}
+}
+/* responsive design */

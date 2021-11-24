@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+	height:100%;
+}
+#title{
+	width: 100%;
+    height: 65%;
+   	background-image: url(../images/3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#title>marquee{
+    font-size: 70px;
+    font-weight: bold;
+    color: rgb(247, 247, 10);
+}
+.menu{
+    width: 100%;
+   	height: 100%;
+  	background-color: red;
+}
+.parent-menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.parent-menu>li{
+    float: left;
+    list-style: none;
+    height: 100%;
+}
+.parent-menu>li>a{
+    height: 100%;
+   	padding: 5px 14px;
+    text-transform: uppercase;
+   	font-weight: bold;
+    box-sizing: border-box;
+}
+.parent-menu li{
+    position: relative;
+}
+.paren-menu>li
+{
+	margin-top:20%;
+}
+.parent-menu li a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+}
+.parent-menu .sub-menu{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 200px;
+	z-index: 1;
+	background-color: white;
+	padding: 0px 20px;
+	border: 0.5px solid rgb(211, 200, 211,0.5);
+}
+.parent-menu a:hover{
+	color: rgb(51, 51, 243);
+}
+.parent-menu li:hover>.sub-menu{
+	display: block;
+}
+.parent-menu>li>.sub-menu{
+	top: 35px;
+	left: 80px;
+}
+.parent-menu .sub-menu li{
+	list-style: none;
+	padding-top: 5;
+	width: 180px;
+}
+.parent-menu .sub-menu li a{
+	line-height: 20px;
+	border-bottom: 1px solid rgba(207, 197, 197, 0.877);
+	width: 100%;
+}
+.clear{
+	clear: left;
+}
+#danhsach{
+	height: 80%; width: 100%;
+}
+#danhsach>iframe{
+	height: 100%; width: 100%;
+	background: url(/images/2.jpeg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

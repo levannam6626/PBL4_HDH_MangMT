@@ -1,0 +1,74 @@
+@charset "ISO-8859-1";
+
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container
+{
+    background: url('/img/sach.jpg');
+
+}
+
+#thongtin
+{
+    background-color: rgb(226, 220, 238);
+    height: 100px;
+    width: 1150px;
+    margin: auto auto;
+    border-radius: 5px;
+    color: rebeccapurple;
+    font-weight: 500;
+    font-size: 25px;
+    padding: 15px;
+    align-items: center;
+}
+
+#thongtin .thongtin-label
+{
+    display: block;
+    margin-bottom: 5px;
+}
+
+#noidung
+{
+    margin-top: 20px;
+    background-color: rgb(224, 252, 243);
+    min-height: 1700px;
+    position: relative;
+    width: 1150px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+
+#noidung .btn-nopbai
+{
+    margin-top: 20px;
+    width: 80px;
+    padding: 10px;
+    background-color: rgb(173, 158, 204);
+    border: none;
+    color:rebeccapurple;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#noidung .btn-nopbai
+{
+    float: right;
+    margin: 10px;
+}
+
+
+#noidung .btn-nopbai:hover
+{  
+    background-color: rgb(149, 90, 226);
+    color: white;
+}
+

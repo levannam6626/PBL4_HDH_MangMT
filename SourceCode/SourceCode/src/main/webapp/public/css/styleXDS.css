@@ -1,0 +1,12 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    background: url("../images/9.jpg");
+}
+.danhsachtk table{
+	margin-top:40px;
+}
+.danhsachtk th{
+	width:150px;
+}
