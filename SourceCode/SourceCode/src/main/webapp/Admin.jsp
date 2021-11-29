@@ -18,7 +18,7 @@
                 <div id="wp_center" style="width: 100%;height: 35%;">
                     <nav class="menu">
                         <ul class="parent-menu">
-                            <li><a>Danh Sách</a>
+                            <li><a href='ChangePassword.jsp' target = "danhsachtk">Danh Sách</a>
                                 <ul class='sub-menu'>
                                     <li><a href='DanhSachTK?tk=SV' target = "danhsachtk">Sinh Viên</a></li>
                                     <li><a href='DanhSachTK?tk=GV' target = "danhsachtk">Giảng Viên</a></li>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div id='danhsach'>
-                <iframe name="danhsachtk" src='Danhsachtk.jsp' target="_self" src="" scrolling="no" frameborder="0"></iframe>
+                <iframe name="danhsachtk" src='Danhsachtk.jsp' target="_self" frameborder="0"></iframe>
             </div>
         </div>
 </body>

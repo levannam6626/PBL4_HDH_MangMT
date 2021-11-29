@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,11 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.bean.Account;
-import model.bo.CheckLoginBO;
+import model.bo.ChangepasswordBO;
+import model.bo.RegisterBO;
 
-@WebServlet("/CheckLoginServlet")
-public class CheckLoginServlet extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet{
+	private static final long serialVersionUID = 4L;
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws IOException, ServletException {
 		doPost(request, response);
@@ -25,39 +25,38 @@ public class CheckLoginServlet extends HttpServlet{
 		String destination = null;
 		String taikhoan = request.getParameter("taikhoan");
 		String matkhau = request.getParameter("matkhau");
-		CheckLoginBO checkLoginBO = new CheckLoginBO();
-		HttpSession session = request.getSession(true);
+		String matkhauxacthuc = request.getParameter("xacnhanmk");
+		RegisterBO registerBO = new RegisterBO();
 		try {
-			if(taikhoan != null && matkhau != null)
+			if(matkhau.equals(matkhauxacthuc))
 			{
-				Account account = new Account();
-				account = checkLoginBO.isValidUser(taikhoan,matkhau);
-				session.setAttribute("Account", account);
-				switch(account.getphanquyen())
+				switch(request.getParameter("tk"))
 				{
-					case "admin":{
-						destination = "/Admin.jsp";
+					case "GV":{
+						String tengv = request.getParameter("tenGV");
+						String sdt = request.getParameter("sdt");
+						registerBO.registerGV(taikhoan, matkhau, tengv, sdt);
 						break;
-					}case "giangvien":{
-						destination = "/GiangVien.jsp";
-						break;
-					}case "sinhvien":{
-						destination = "/SinhVien.jsp";
-						break;
-					}default :{
-						destination = "/Login.jsp";
+					}
+					case "SV":{
+						String mssv = request.getParameter("mssv");
+						String tensv = request.getParameter("tenSV");
+						String ngaysinh = request.getParameter("ngaysinh");
+						String sdt = request.getParameter("sdt");
+						registerBO.registerSV(taikhoan, matkhau, mssv, tensv, ngaysinh, sdt);
 						break;
 					}
 				}
+				destination = "/Danhsachtk.jsp";
 				RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 				rd.forward(request, response);
 			}else {
-				destination = "/Login.jsp";
+				destination = "/Register.jsp?thongbao=matkhau&&tk="+request.getParameter("tk");
 				RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {
-			destination = "/Login.jsp";
+			destination = "/Register.jsp?thongbao=loi&&tk="+request.getParameter("tk");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 			rd.forward(request, response);
 		}

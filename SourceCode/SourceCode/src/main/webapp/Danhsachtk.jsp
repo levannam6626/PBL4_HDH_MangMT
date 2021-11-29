@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}
 /SourceCode/public/css/styleXDS.css">
+
 </head>
 <body>
 	<div class="danhsachtk">
@@ -61,6 +62,11 @@
 					}
 				}%>
 				</table>
+				<div class="nut">
+					<a href="Register.jsp?tk=<%= request.getParameter("tk")%>">Thêm</a>
+					<a href="Register_GV.jsp">Sửa</a>
+					<a href="Register_GV.jsp">Xóa</a>
+				</div>
             </form>
             <% } %>
         </div>

@@ -11,6 +11,7 @@ public class Account {
 		username = "";
 		password = "";
 		phanquyen = "";
+		trangthai = false;
 	}
 	public void setusername(String username)
 	{

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.bean.Account;
-import model.bo.CheckLoginBO;
+import model.bo.ChangepasswordBO;
 
 @WebServlet("/ChangepasswordServlet")
 public class ChangepasswordServlet extends HttpServlet{
@@ -22,41 +22,33 @@ public class ChangepasswordServlet extends HttpServlet{
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String destination = null;
-		String taikhoan = request.getParameter("taikhoan");
-		String matkhau = request.getParameter("matkhau");
-		CheckLoginBO checkLoginBO = new CheckLoginBO();
-		HttpSession session = request.getSession(false);
-		try {
-			if(taikhoan != null && matkhau != null)
-			{
-				Account account = new Account();
-				session.setAttribute("Account", account);
-				account = checkLoginBO.isValidUser(taikhoan,matkhau);
-				switch(account.getphanquyen())
+		String matkhaucu = request.getParameter("old-pass");
+		String matkhaumoi = request.getParameter("new-pass");
+		String matkhauxacthuc = request.getParameter("confirm");
+		ChangepasswordBO changepwBO = new ChangepasswordBO();
+		HttpSession session = request.getSession(true);
+		Account account = new Account();
+		account = (Account)session.getAttribute("Account");
+		if(account.getpassword().equals(matkhaucu)) {
+			try {
+				if(matkhaumoi.equals(matkhauxacthuc))
 				{
-					case "admin":{
-						destination = "/Admin.jsp";
-						break;
-					}case "giangvien":{
-						destination = "/GiangVien.jsp";
-						break;
-					}case "sinhvien":{
-						destination = "/SinhVien.jsp";
-						break;
-					}default :{
-						destination = "/Login.jsp";
-						break;
-					}
+					changepwBO.changpwBO(account.getusername(), matkhaumoi);
+					destination = "/ChangePassword.jsp?thongbao=Success";
+					RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
+					rd.forward(request, response);
+				}else {
+					destination = "/ChangePassword.jsp?";
+					RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
+					rd.forward(request, response);
 				}
-				RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
-				rd.forward(request, response);
-			}else {
-				destination = "/Login.jsp";
+			} catch (Exception e) {
+				destination = "/ChangePassword.jsp";
 				RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 				rd.forward(request, response);
 			}
-		} catch (Exception e) {
-			destination = "/Login.jsp";
+		}else {
+			destination = "/ChangePassword.jsp?thongbao=Mkcukhongdung";
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 			rd.forward(request, response);
 		}

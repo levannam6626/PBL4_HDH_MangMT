@@ -12,15 +12,21 @@
 <body>
  <div class="change-pass">
         <h3> THAY ĐỔI MẬT KHẨU</h3>
-        <form action="" method="">
+        <% if(request.getParameter("thongbao") == null){ %>
+        <form action="ChangepasswordServlet" method="">
             <label for="old-pass" class="label">Nhập mật khẩu cũ: </label>
-            <input type="password" value="" placeholder="Nhập mật khẩu cũ" id="old-pass" class="input">
+            <input type="password" value="" placeholder="Nhập mật khẩu cũ" name="old-pass" class="input">
             <label for="new-pass" class="label" >Nhập mật khẩu mới: </label>
-            <input type="password" value="" placeholder="Nhập mật khẩu mới" id="new-pass" class="input">
+            <input type="password" value="" placeholder="Nhập mật khẩu mới" name="new-pass" class="input">
             <label for="confirm" class="label"> Xác nhận mật khẩu mới: </label>
-            <input type="password" value="" placeholder="Nhập lại mật khẩu mới" id="confirm" class="input">
+            <input type="password" value="" placeholder="Nhập lại mật khẩu mới" name="confirm" class="input">
             <button value="" class="btn-capnhat">Cập nhật</button>
         </form>
+        <%}else if(request.getParameter("thongbao").equals("hi")){ %>
+        <h3>HI</h3>
+        <%}else if(request.getParameter("thongbao").equals("he")){ %>
+        <h3>He</h3>
+        <%} %>
     </div>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}
-/SourceCode/public/css/style.css">
+								/SourceCode/public/css/style.css">
 </head>
 <body>
 	<div class="center-container">
